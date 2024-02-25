@@ -1,0 +1,14 @@
+train_dir = "Train"
+val_dir = "test"
+train_lung_mask_dir = "new_lung_train_mask"
+val_lung_pred_dir = "new_add_lung_mask"
+median_spacing = [0.74, 0.74, 5.0]
+voxel_max = 100.0
+voxel_min = -1000.0
+images_3d_path = "3d_segment_data/image"
+mask_3d_path = "3d_segment_data/mask"
+images_2d_path = "2d_segment_data/image"
+mask_2d_path = "2d_segment_data/mask"
+lggo_pred_dir = "3D_result/test_CBL_ensemble"
+sggo_pred_dir = "2D_result/test_DSFL_IN_Ensemble"
+merge_dir = "DBL_CBL"

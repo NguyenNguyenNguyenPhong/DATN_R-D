@@ -1,0 +1,94 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.app-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the image slide containers */
+.slide-container {
+    max-width: 500px;
+    height: 540px;
+    margin: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ccc;
+}
+
+.slide-container img {
+    max-width: 95%;
+    height: auto;
+    display: block;
+    margin: auto auto;
+}
+
+/* Style the arrow buttons */
+.arrow-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Add margin between image and buttons */
+    position: absolute;
+    bottom: 0; /* Position the container at the bottom */
+    width: 100%;
+}
+
+.arrow-button {
+    width: 40px;
+    height: 40px;
+    background-color: #f1f1f1;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px 5px; /* Add 10px distance between buttons */
+    font-size: 24px;
+}
+
+/* Use pseudo-elements to create the arrow shape */
+.arrow-back::before {
+    content: '\2190'; /* Unicode Left Arrow character */
+}
+
+.arrow-next::before {
+    content: '\2192'; /* Unicode Right Arrow character */
+}
+
+#segmentButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#segmentButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#segmentButton:hover {
+    background-color: #0056b3;
+}
