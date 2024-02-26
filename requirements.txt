@@ -1,4 +1,4 @@
-tensorflow == 2.10.9
+tensorflow
 Flask
 nibabel
 numpy
@@ -6,7 +6,7 @@ opencv-python
 scipy
 tqdm
 typing
-skimage
+scikit-image
 matplotlib
-keras == 2.10.0
-tensorflow-datasets == 4.9.2
+keras
+tensorflow-datasets

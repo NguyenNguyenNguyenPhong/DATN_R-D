@@ -1,0 +1,12 @@
+tensorflow
+Flask
+nibabel
+numpy
+opencv-python
+scipy
+tqdm
+typing
+scikit-image
+matplotlib
+keras
+tensorflow-datasets
