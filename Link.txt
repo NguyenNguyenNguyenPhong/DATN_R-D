@@ -4,3 +4,5 @@ https://conferences.miccai.org/2023/en/challenges.asp
 https://sde.uoc.ac.in/sites/default/files/sde_videos/Digital%20Image%20Processing%203rd%20ed.%20-%20R.%20Gonzalez%2C%20R.%20Woods-ilovepdf-compressed.pdf
 https://dl.icdst.org/pdfs/files4/01c56e081202b62bd7d3b4f8545775fb.pdf
 https://www.researchgate.net/profile/Geoff-Dougherty/publication/226187488_Applications_of_Medical_Image_Processing_in_the_Diagnosis_and_Treatment_of_Spinal_Deformity/links/5450308f0cf24e8f7374b132/Applications-of-Medical-Image-Processing-in-the-Diagnosis-and-Treatment-of-Spinal-Deformity.pdf
+https://kgut.ac.ir/useruploads/1550563201478ety.pdf
+https://www.mica.edu.vn/perso/Vu-Hai/TH03027/Ref/BiosignalandBiomedical%20ImageProcessingMatlab-BasedApplications_muya.pdf
