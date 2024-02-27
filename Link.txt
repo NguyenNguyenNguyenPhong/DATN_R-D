@@ -1,3 +1,5 @@
 https://2023.biomedicalimaging.org/en/CHALLENGES.html
 https://grand-challenge.org/
 https://conferences.miccai.org/2023/en/challenges.asp
+https://sde.uoc.ac.in/sites/default/files/sde_videos/Digital%20Image%20Processing%203rd%20ed.%20-%20R.%20Gonzalez%2C%20R.%20Woods-ilovepdf-compressed.pdf
+https://dl.icdst.org/pdfs/files4/01c56e081202b62bd7d3b4f8545775fb.pdf
