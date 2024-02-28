@@ -19,7 +19,6 @@ def merge_ggo(image, mask, lung_mask, lggo_mask):
     s = np.ones((3, 3, 3))
     slabels, snum_components = label(mask, structure=s)
 
-    selem = np.ones((3, 3, 3), dtype=np.bool)
     # closed_image = binary_closing(lggo_mask, structure=selem)
 
     llabels, lnum_components = label(lggo_mask, structure=s)
@@ -109,7 +108,7 @@ def do_segmentation(image, file_name, voxel_ratio, ensemble=False):
     draw_contour(image, mask, file_name, "static/lung_segment/image_elevation")
     draw_contour(trans_img, trans_mask, file_name, "static/lung_segment/image_side")
 
-    return file_name, resize_img.shape[-1], trans_img.shape[-1]
+    return file_name, image.shape[-1], trans_img.shape[-1]
 
 
 if __name__ == "__main__":

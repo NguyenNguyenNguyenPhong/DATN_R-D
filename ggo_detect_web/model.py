@@ -63,8 +63,8 @@ def upsample_block(inputs, skip_connection, filters, dimension=2, lung=False):
             conv1 = conv_block(concat, filters, dimension)
 
     else:
-        # concat = tf.keras.layers.Concatenate()([skip_connection, upsample])
-        conv1 = conv_block(upsample, filters, dimension)
+        concat = tf.keras.layers.Concatenate()([skip_connection, upsample])
+        conv1 = conv_block(concat, filters, dimension)
     conv2 = conv_block(conv1, filters, dimension)
     return conv2
 
@@ -91,8 +91,8 @@ def build_unet(input_shape, chanel=16, stage=5, dimension=2):
     encoder_layers.append(conv_last_1)
     x = conv_block(conv_last_1, chanel * 2 ** (stage - 1))
 
-    for layer in encoder_layers:
-        layer.trainable = False
+    # for layer in encoder_layers:
+    #     layer.trainable = False
 
     # Upsampling
     for i in range(1, stage):

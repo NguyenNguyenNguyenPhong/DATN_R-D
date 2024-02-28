@@ -3,6 +3,7 @@
 
 <head>
   <title>Image Slide App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     /* Add your custom styles here */
     body {
@@ -85,14 +86,6 @@
       /* Unicode Right Arrow character */
     }
 
-    < !-- #segmentButton {
-      -->< !-- margin: auto;
-      -->< !-- display: flex;
-      -->< !-- justify-content: center;
-      -->< !-- margin-top: 20px;
-      -->< !-- padding: 8px 16px;
-      -->< !--
-    }
 
     -->
   </style>
@@ -128,17 +121,6 @@
       let imageArray2 = {{ uploaded_image_paths_2 | tojson }};
       let name = "{{ name }}"
 
-      function updateSlides(paths1, paths2) {
-        if (paths1.length > 0) {
-          document.getElementById('slide-image-1').src = paths1[Math.floor(imageArray1.length / 2)];
-        }
-
-        if (paths2.length > 0) {
-          document.getElementById('slide-image-2').src = paths2[Math.floor(imageArray2.length / 2)];
-        }
-      }
-
-      // Function to fetch updated image paths using AJAX
       function fetchUpdatedImagePaths() {
         const nameParam = encodeURIComponent(name);
         fetch(`/get_segment_image_paths/${nameParam}`)
@@ -153,6 +135,19 @@
 
 
       fetchUpdatedImagePaths();
+
+      function updateSlides(paths1, paths2) {
+        if (paths1.length > 0) {
+          document.getElementById('slide-image-1').src = paths1[Math.floor(imageArray1.length / 2)];
+        }
+
+        if (paths2.length > 0) {
+          document.getElementById('slide-image-2').src = paths2[Math.floor(imageArray2.length / 2)];
+        }
+      }
+
+      // Function to fetch updated image paths using AJAX
+
 
       const slideImage1 = document.getElementById('slide-image-1');
       const backButton1 = document.getElementById('backButton1');
@@ -199,18 +194,20 @@
         }
       }
       function scrollSlideContainer1(e) {
-            // Check scroll direction and update current slide
-            currentSlide1 += (e.deltaY > 0) ? 1 : -1;
-            currentSlide1 = Math.max(0, Math.min(currentSlide1, imageArray1.length - 1));
-            updateSlide1();
+        // Check scroll direction and update current slide
+        currentSlide1 += (e.deltaY > 0) ? 1 : -1;
+        currentSlide1 = Math.max(0, Math.min(currentSlide1, imageArray1.length - 1));
+        updateSlide1();
       }
 
-       function scrollSlideContainer2(e) {
-            // Check scroll direction and update current slide
-            currentSlide2 += (e.deltaY > 0) ? 1 : -1;
-            currentSlide2 = Math.max(0, Math.min(currentSlide2, imageArray2.length - 1));
-            updateSlide2();
-       }
+      function scrollSlideContainer2(e) {
+        // Check scroll direction and update current slide
+        currentSlide2 += (e.deltaY > 0) ? 1 : -1;
+        currentSlide2 = Math.max(0, Math.min(currentSlide2, imageArray2.length - 1));
+        updateSlide2();
+      }
+
+      updateSlide2();
 
       const slideContainer1 = document.getElementById('slide-container-1');
       const slideContainer2 = document.getElementById('slide-container-2');

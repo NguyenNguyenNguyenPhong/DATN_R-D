@@ -19,7 +19,7 @@ def load_model(name, fold=None):
         segment_model_name = f"{name}_fold_{fold}"
         lggo = LGGO_Segment(lggo_input_size, channel=32, stage=5)
         model = lggo.unet
-        load_weights(model, model_path, segment_model_name)
+        model = load_weights(model, model_path, segment_model_name)
         models.append(model)
 
     else:
@@ -144,13 +144,11 @@ def split_and_predict(image, lung_mask, models, min_val, voxel_ratio):
     ensemble_mask = np.zeros(image.shape)
 
     for i in range(len(masks)):
-        masks[i][bbox[0]:bbox[1], x_center - 128 - padding:x_center + 128 + padding, bbox[4]:finish] /= gaussians[
-                                                                                                                i][
+        masks[i][bbox[0]:bbox[1], x_center - 128 - padding:x_center + 128 + padding, bbox[4]:finish] /= gaussians[i][
                                                                                                             bbox[0]:
                                                                                                             bbox[1],
                                                                                                             x_center - 128 - padding:x_center + 128 + padding,
-                                                                                                            bbox[
-                                                                                                                4]:finish]
+                                                                                                            bbox[4]:finish]
         ensemble_mask += (masks[i] > 0.5).astype(int)
 
     return (ensemble_mask >= ((len(models) - 1) / 2)).astype(int)

@@ -59,7 +59,8 @@ def run_segmentation(image_path, name):
     print("segment")
     img = nib.load(image_path)
     data = img.get_fdata()
-    segment_name, num_img, num_trans = do_segmentation(data, name, app.config['VOXEL_RATIO'], app.config['USE_ENSEMBLE'])
+    segment_name, num_img, num_trans = do_segmentation(data, name, app.config['VOXEL_RATIO'],
+                                                       app.config['USE_ENSEMBLE'])
     # This function will run the AI process in the background
     # segmented_filename = fake_perform_segmentation(image_path)
     enable_segment_button(segment_name, num_img, num_trans)
@@ -126,7 +127,8 @@ def display_image(filename):
     segmentation_thread.start()
 
     return render_template('display.html', name=name, uploaded_image_paths_1=uploaded_image_paths_1,
-                           uploaded_image_paths_2=uploaded_image_paths_2, time=int(num_slices_eval*1.5))
+                           uploaded_image_paths_2=uploaded_image_paths_2,
+                           time=int(num_slices_eval * 1.5) if app.config['USE_ENSEMBLE'] == True else num_slices_eval)
     # return render_template('display.html')
 
 
