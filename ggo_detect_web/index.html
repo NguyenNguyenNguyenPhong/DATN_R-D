@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slide App</title>
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #slide-container-1 {
+      max-width: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #slide-container-1 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #slide-container-2 {
+      max-width: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #slide-container-2 img {
+      max-width: 100%;
+      height: auto;
+    }
+    .app-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #segmentButton {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 8px 16px;
+    }
+  </style>
+</head>
+<body>
+ <div class="app-container">
+    <div>
+        <h2>Folder 1</h2>
+        <div id="slide-container-1">
+            <img id="slide-image-1" src="" alt="Slide Image" />
+          </div>
+        <button id="backButton1">Back</button>
+        <button id="nextButton1">Next</button>
+    </div>
+    <div>
+        <h2>Folder 2</h2>
+        <div id="slide-container-2">
+            <img id="slide-image-2" src="" alt="Slide Image" />
+          </div>
+        <button id="backButton2">Back</button>
+        <button id="nextButton2">Next</button>
+    </div>
+ </div>
+  
+  <button id="segmentButton">Segment</button>
+
+  <script>
+    const numberImage = 135;
+
+    //list 1
+    const imageArray1 = Array(numberImage).fill('').map((ele, index) => `./segments/segment_${index}.png`);
+    const slideImage1 = document.getElementById('slide-image-1');
+    const backButton1 = document.getElementById('backButton1');
+    const nextButton1 = document.getElementById('nextButton1');
+    let currentSlide1 = 0;
+
+    backButton1.addEventListener('click', () => {
+      currentSlide1 = (currentSlide1 - 1 + imageArray1.length) % imageArray1.length;
+      updateSlide1();
+    });
+
+    nextButton1.addEventListener('click', () => {
+      currentSlide1 = (currentSlide1 + 1) % imageArray1.length;
+      updateSlide1();
+    });
+
+    function updateSlide1() {  
+      if (imageArray1.length > 0) {
+        slideImage1.src = imageArray1[currentSlide1];
+      }
+    }
+    
+    updateSlide1(); // Load the first image
+
+    //list 2
+    const imageArray2 = Array(numberImage).fill('').map((ele, index) => `./segments/segment_${index}.png`);
+    const slideImage2 = document.getElementById('slide-image-2');
+    const backButton2 = document.getElementById('backButton2');
+    const nextButton2 = document.getElementById('nextButton2');
+    let currentSlide2 = 0;
+
+    backButton2.addEventListener('click', () => {
+      currentSlide2 = (currentSlide2 - 1 + imageArray2.length) % imageArray2.length;
+      updateSlide2();
+    });
+
+    nextButton2.addEventListener('click', () => {
+      currentSlide2 = (currentSlide2 + 1) % imageArray2.length;
+      updateSlide2();
+    });
+
+    function updateSlide2() {  
+      if (imageArray2.length > 0) {
+        slideImage2.src = imageArray2[currentSlide2];
+      }
+    }
+    
+    updateSlide2(); // Load the first image
+
+  </script>
+</body>
+</html>
