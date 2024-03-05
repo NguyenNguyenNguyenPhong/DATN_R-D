@@ -8,8 +8,13 @@ https://kgut.ac.ir/useruploads/1550563201478ety.pdf
 https://www.mica.edu.vn/perso/Vu-Hai/TH03027/Ref/BiosignalandBiomedical%20ImageProcessingMatlab-BasedApplications_muya.pdf
 
 Paper
+______Implemented
 https://paperswithcode.com/paper/brau-net-u-shaped-hybrid-cnn-transformer
 https://paperswithcode.com/paper/scunet-assessment-of-pulmonary-embolism-ct
+https://paperswithcode.com/paper/semi-mamba-unet-pixel-level-contrastive-cross
+
+
+
 https://paperswithcode.com/paper/1m-parameters-are-enough-a-lightweight-cnn
 
 
