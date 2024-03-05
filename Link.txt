@@ -12,7 +12,12 @@ ______Implemented
 https://paperswithcode.com/paper/brau-net-u-shaped-hybrid-cnn-transformer
 https://paperswithcode.com/paper/scunet-assessment-of-pulmonary-embolism-ct
 https://paperswithcode.com/paper/semi-mamba-unet-pixel-level-contrastive-cross
-
+-----------------
+https://paperswithcode.com/paper/automated-segmentation-of-lesions-and-organs
+https://paperswithcode.com/paper/semi-supervised-medical-image-segmentation-6
+https://paperswithcode.com/paper/weak-mamba-unet-visual-mamba-makes-cnn-and
+https://paperswithcode.com/paper/swin-umamba-mamba-based-unet-with-imagenet
+---------------
 
 
 https://paperswithcode.com/paper/1m-parameters-are-enough-a-lightweight-cnn
