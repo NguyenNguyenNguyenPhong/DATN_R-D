@@ -31,3 +31,51 @@ def plot_img(sesDirs):
         plt.tight_layout()
     plt.savefig('./out/'+sesDir.split('/')[2])
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+import os
+import glob
+import subprocess
+from picture_nnunet_package.doInference import do_segmentation
+import torch
+
+for ptDir in ptDirs[:6]:
+    with ZipFile('imaging.zip', 'r') as zipObj:
+        for f in listOfFileNames:
+            if f.startswith(ptDir):
+                zipObj.extract(f)
+    ptID = os.path.split(ptDir)[1]
+    sesDirs = glob.glob(f'./{ptDir}/*')
+    for sesDir in sesDirs:
+        sesID = os.path.split(sesDir)[1]
+        imgs = {}
+        for mod in ['CT1','T1','T2','FLAIR']:
+            imgs[mod] = glob.glob(sesDir+'/'+mod+'*.nii.gz')[0]
+        if 'week-000' in sesID:
+            sessionType = 'preop'
+        else:
+            sessionType = 'postop_beta'
+
+        do_segmentation(imgs['CT1'], t1=imgs['T1'], t2=imgs['T2'], flair=imgs['FLAIR'], sessionType =sessionType, remove_intermediate_files = False, mni=False, wdir_postfix='random',skip_skullstrip=True)
+        torch.cuda.empty_cache()
+        my_seg = glob.glob(f'{sesDir}/segmentation_native*.nii.gz')[0]
+        make_pngs(sesDir)
+        shutil.rmtree(sesDir)
+    plot_img(sesDirs)
+
+
+
+
+
+
